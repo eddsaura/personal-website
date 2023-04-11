@@ -17,9 +17,20 @@ export default component$(() => {
           Runroom
         </a>
         .
-        <br /> Nextjs + jitsi
+        <br />
+        <b>Stack:</b> Nextjs + Jitsi
       </p>
-      <p>HTML & CSS teacher at BAU's Experience Design Masters Degree.</p>
+      <p>
+        HTML & CSS teacher at{" "}
+        <a
+          href="https://www.baued.es/en/studies/masters-and-postgraduate-degrees/master-in-digital-experience-design"
+          target="_blank"
+          referrerPolicy="no-referrer"
+        >
+          BAU's Digital Experience Design
+        </a>{" "}
+        Masters Degree.
+      </p>
       <p>
         Discovering my <i>ikigai.</i>
       </p>
