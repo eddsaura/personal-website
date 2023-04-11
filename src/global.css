@@ -6,16 +6,116 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --citadel-brown-100: #fdf3e4;
+@layer base {
+  :root {
+    /* --citadel-brown-100: #fdf3e4;
   --citadel-brown-200: #dfd4c5;
   --citadel-brown-300: #a8958a;
   --citadel-brown-400: #927b6d;
   --citadel-brown-500: #3f352f;
   --citadel-brown-600: #27211d;
-  --citadel-brown-700: #110e0d;
+  --citadel-brown-700: #110e0d; */
+
+    /* colors to rgb values */
+    --citadel-brown-100: 253 243 228;
+    --citadel-brown-200: 223 212 197;
+    --citadel-brown-300: 168 149 138;
+    --citadel-brown-400: 146 123 109;
+    --citadel-brown-500: 63 53 47;
+    --citadel-brown-600: 39 33 29;
+    --citadel-brown-700: 17 14 13;
+
+    --header-weight: 700;
+    --serif-font-fallback: serif;
+    --sans-font-fallback: Helvetica, Arial, sans-serif;
+
+    --bold-weight: 600;
+  }
+}
+
+@font-face {
+  font-family: "Newsreader";
+  src: url("/fonts/Newsreader[opsz,wght].woff2") format("woff2");
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: "Newsreader";
+  src: url("/fonts/Newsreader-Italic[opsz,wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/OpenSans_wdth,wght.ttf") format("truetype");
+  font-weight: 300 800;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/OpenSans-Italic_wdth,wght.ttf") format("truetype");
+  font-weight: 300 800;
+  font-stretch: 75% 100%;
+  font-style: italic;
+}
+
+h1 {
+  @apply text-3xl;
+}
+
+h2 {
+  @apply text-xl;
+}
+
+h3 {
+  @apply text-lg;
+}
+
+h1,
+h2 {
+  font-family: "Newsreader", var(--serif-font-fallback);
+  font-variation-settings: "wght" 400, "opsz" 42;
+  line-height: 1.1;
+  @apply mb-4 text-primary-100;
+}
+
+h3,
+h4,
+h5 {
+  font-family: "Open Sans", var(--sans-font-fallback);
+  font-variation-settings: "wdth" 100, "wght" 420;
+  line-height: 1.1;
+  @apply text-primary-100;
 }
 
 body {
-  @apply bg-primary-500 text-primary-100;
+  font-size: 100%;
+  font-family: "Open Sans", var(--sans-font-fallback);
+  font-weight: 300;
+  font-variation-settings: "wght" 300, "wdht" 100;
+  line-height: 1.33;
+  @apply bg-primary-700 text-primary-100;
+}
+
+p + p {
+  @apply mt-4;
+}
+
+a {
+  font-variation-settings: "wght" 400;
+
+  &:hover {
+    @apply text-primary-200;
+  }
+
+  &.decorated {
+    @apply border-b border-primary-100 hover:border-primary-200;
+  }
+
+  @apply text-primary-100;
+}
+
+b {
+  font-variation-settings: "wght" var(--bold-weight);
 }
