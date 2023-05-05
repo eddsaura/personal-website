@@ -1,10 +1,23 @@
 import { component$ } from "@builder.io/qwik";
+import { SidebarItem } from "./SidebarItem";
+import { Diamond } from "../svg/Diamond/Diamond";
+import { Smiley } from "../svg/Smiley/Smiley";
+import { Book } from "../svg/Book/Book";
 
 export const Sidebar = component$(() => {
   return (
-    <navbar class="h-full px-4 py-8 flex flex-col items-center gap-4 fixed">
-      <div class="bg-red-500 w-16 h-16"></div>
-      <div class="bg-green-800 w-16 h-16"></div>
+    <navbar class="h-full px-4 py-8 fixed">
+      <ul class="flex flex-col items-center gap-4 ">
+        <SidebarItem>
+          <Smiley />
+        </SidebarItem>
+        <SidebarItem>
+          <Book />
+        </SidebarItem>
+        <SidebarItem>
+          <Diamond />
+        </SidebarItem>
+      </ul>
     </navbar>
   );
 });

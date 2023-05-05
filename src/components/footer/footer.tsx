@@ -12,9 +12,9 @@ export default component$(() => {
         <SocialItem link="https://github.com/eddsaura">
           Github <Arrow />
         </SocialItem>
-        <SocialItem link="https://twitter.com/0xSaura">
+        {/* <SocialItem link="https://twitter.com/0xSaura">
           Tiktok <Arrow />
-        </SocialItem>
+        </SocialItem> */}
       </div>
 
       <blockquote>
