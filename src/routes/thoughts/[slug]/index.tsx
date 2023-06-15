@@ -6,6 +6,8 @@ import { PostBody } from "./post-body";
 export default component$(() => {
   const postSignal = useGetPost();
   const post = postSignal.value;
+
+  console.log(post.content.json.content);
   return (
     <article>
       <PostBody content={post.content} />

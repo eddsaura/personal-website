@@ -11,7 +11,7 @@ export const AboutMe = component$(() => {
         It feels weird to me to define myself just as someone who codes web
         apps.
       </p>
-      <p class="max-w-xs">Driven by design and ideas. </p>
+      <p class="max-w-xs">Driven by design, community and ideas. </p>
     </section>
   );
 });

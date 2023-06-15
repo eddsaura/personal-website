@@ -7,18 +7,22 @@ import contentfulFetch from "~/lib/contentful-fetch";
 import type { Post } from "~/types/posts/Posts";
 
 export default component$(() => {
-  // const formattedPosts = (): Post[] => {
-  //   const signal = useGetPosts();
+  const formattedPosts = (): Post[] => {
+    const signal = useGetPosts();
 
-  //   return signal.value.items.map((post: any) => {
-  //     return {
-  //       ...post,
-  //       date: post.sys.firstPublishedAt,
-  //     };
-  //   });
-  // };
+    if (!signal.value.items) {
+      return [];
+    }
 
-  // const posts = formattedPosts();
+    return signal.value.items.map((post: any) => {
+      return {
+        ...post,
+        date: post.sys.firstPublishedAt,
+      };
+    });
+  };
+
+  const posts = formattedPosts();
 
   return (
     <>
@@ -26,10 +30,10 @@ export default component$(() => {
 
       <Now />
 
-      {/* <section>
+      <section>
         <h2 class="text-xl italic">Thoughts</h2>
         <ThoughtsList posts={posts} />
-      </section> */}
+      </section>
     </>
   );
 });
@@ -50,6 +54,7 @@ export const useGetPosts = routeLoader$(async ({ fail }) => {
     }
   }
   `;
+
   try {
     const response = await contentfulFetch(query);
     const data = await response.json();

@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^16.0.3",
-    "contentful": "^9.3.5"
+    "contentful": "^9.3.5",
+    "qwik": "^1.0.57"
   }
 }
